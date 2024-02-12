@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		FA4CB1062B7A475A00D84DF4 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB1052B7A475A00D84DF4 /* Font+Ext.swift */; };
 		FA4CB1092B7A4CDB00D84DF4 /* CustomTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB1082B7A4CDB00D84DF4 /* CustomTextEditor.swift */; };
+		FA4CB10B2B7A5B6600D84DF4 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB10A2B7A5B6600D84DF4 /* EventsView.swift */; };
+		FA4CB10D2B7A5B8000D84DF4 /* EventsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB10C2B7A5B8000D84DF4 /* EventsCellView.swift */; };
+		FA4CB1102B7A5BA000D84DF4 /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB10F2B7A5BA000D84DF4 /* EventsViewModel.swift */; };
+		FA4CB1122B7A5F3000D84DF4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB1112B7A5F3000D84DF4 /* Event.swift */; };
+		FA4CB1142B7A6E5600D84DF4 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB1132B7A6E5600D84DF4 /* Date+Ext.swift */; };
+		FA4CB1162B7AA8BE00D84DF4 /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB1152B7AA8BE00D84DF4 /* AddEventView.swift */; };
+		FA4CB1182B7ABA3F00D84DF4 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB1172B7ABA3F00D84DF4 /* EventDetailView.swift */; };
 		FA6E7B6E2B768DA0000AE811 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E7B6D2B768DA0000AE811 /* Article.swift */; };
 		FA6E7B702B7690F6000AE811 /* ArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E7B6F2B7690F6000AE811 /* ArticlesViewModel.swift */; };
 		FA6E7B722B769106000AE811 /* ArticlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E7B712B769106000AE811 /* ArticlesView.swift */; };
@@ -36,6 +43,13 @@
 /* Begin PBXFileReference section */
 		FA4CB1052B7A475A00D84DF4 /* Font+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
 		FA4CB1082B7A4CDB00D84DF4 /* CustomTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEditor.swift; sourceTree = "<group>"; };
+		FA4CB10A2B7A5B6600D84DF4 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
+		FA4CB10C2B7A5B8000D84DF4 /* EventsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCellView.swift; sourceTree = "<group>"; };
+		FA4CB10F2B7A5BA000D84DF4 /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
+		FA4CB1112B7A5F3000D84DF4 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		FA4CB1132B7A6E5600D84DF4 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		FA4CB1152B7AA8BE00D84DF4 /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
+		FA4CB1172B7ABA3F00D84DF4 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		FA6E7B6D2B768DA0000AE811 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		FA6E7B6F2B7690F6000AE811 /* ArticlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewModel.swift; sourceTree = "<group>"; };
 		FA6E7B712B769106000AE811 /* ArticlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesView.swift; sourceTree = "<group>"; };
@@ -76,6 +90,14 @@
 			isa = PBXGroup;
 			children = (
 				FA6E7B792B76AA1A000AE811 /* ArticleCellView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FA4CB10E2B7A5B8400D84DF4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA4CB10C2B7A5B8000D84DF4 /* EventsCellView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -182,6 +204,11 @@
 		FAC4873A2B750A4900943BDB /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				FA4CB10F2B7A5BA000D84DF4 /* EventsViewModel.swift */,
+				FA4CB10A2B7A5B6600D84DF4 /* EventsView.swift */,
+				FA4CB1172B7ABA3F00D84DF4 /* EventDetailView.swift */,
+				FA4CB1152B7AA8BE00D84DF4 /* AddEventView.swift */,
+				FA4CB10E2B7A5B8400D84DF4 /* Cells */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -235,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				FA6E7B6D2B768DA0000AE811 /* Article.swift */,
+				FA4CB1112B7A5F3000D84DF4 /* Event.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -243,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				FA4CB1052B7A475A00D84DF4 /* Font+Ext.swift */,
+				FA4CB1132B7A6E5600D84DF4 /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -317,17 +346,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4CB1182B7ABA3F00D84DF4 /* EventDetailView.swift in Sources */,
+				FA4CB1142B7A6E5600D84DF4 /* Date+Ext.swift in Sources */,
 				FA6E7B6E2B768DA0000AE811 /* Article.swift in Sources */,
 				FA6E7B7E2B76B40F000AE811 /* CategoryButtonsScrollView.swift in Sources */,
+				FA4CB10B2B7A5B6600D84DF4 /* EventsView.swift in Sources */,
 				FAC4874B2B75728C00943BDB /* ActionButtonView.swift in Sources */,
 				FAC487472B75592600943BDB /* OnboardingViewModel.swift in Sources */,
 				FA6E7B722B769106000AE811 /* ArticlesView.swift in Sources */,
 				FA6E7B782B76A8EC000AE811 /* EmptyView.swift in Sources */,
+				FA4CB10D2B7A5B8000D84DF4 /* EventsCellView.swift in Sources */,
 				FAC487432B7555FA00943BDB /* OnboardingView.swift in Sources */,
 				FA6E7B822B76D5A0000AE811 /* BackButtonView.swift in Sources */,
 				FA4CB1062B7A475A00D84DF4 /* Font+Ext.swift in Sources */,
 				FAF4C7BA2B7821A200A4C5F8 /* ArticleDetailView.swift in Sources */,
+				FA4CB1122B7A5F3000D84DF4 /* Event.swift in Sources */,
 				FAE703A42B76DADA00D55822 /* CustomTextField.swift in Sources */,
+				FA4CB1162B7AA8BE00D84DF4 /* AddEventView.swift in Sources */,
 				FA6E7B802B76BF10000AE811 /* AddArticleView.swift in Sources */,
 				FA6E7B7A2B76AA1A000AE811 /* ArticleCellView.swift in Sources */,
 				FAC487292B75067600943BDB /* ContentView.swift in Sources */,
@@ -335,6 +370,7 @@
 				FAC487452B75566800943BDB /* Onboarding.swift in Sources */,
 				FA6E7B742B769300000AE811 /* StorageManager.swift in Sources */,
 				FA6E7B7C2B76B17E000AE811 /* CategoryButtonView.swift in Sources */,
+				FA4CB1102B7A5BA000D84DF4 /* EventsViewModel.swift in Sources */,
 				FA6E7B762B76A709000AE811 /* ToolbarButtonView.swift in Sources */,
 				FA6E7B702B7690F6000AE811 /* ArticlesViewModel.swift in Sources */,
 				FA4CB1092B7A4CDB00D84DF4 /* CustomTextEditor.swift in Sources */,
