@@ -23,6 +23,7 @@ struct CategoryButtonsScrollView: View {
                     )
                 }
             }
+            .padding(.leading)
         }
     }
 }

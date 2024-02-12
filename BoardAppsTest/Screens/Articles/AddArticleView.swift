@@ -11,11 +11,11 @@ struct AddArticleView: View {
     @ObservedObject var viewModel: ArticlesViewModel
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var headline: String = ""
-    @State private var selectedCategory: String = ""
-    @State private var status: String = "Status"
-    @State private var publisher: String = ""
-    @State private var content: String = ""
+    @State private var headline = ""
+    @State private var selectedCategory = ""
+    @State private var status = "Status"
+    @State private var publisher = ""
+    @State private var text = ""
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -37,7 +37,7 @@ struct AddArticleView: View {
                         .padding([.leading, .trailing])
                     
                     #warning("Create custom TextEditor")
-                    CustomTextField(value: $content, placeholder: "Article text")
+                    CustomTextField(value: $text, placeholder: "Article text")
                         .padding([.leading, .trailing])
                 }
             }
@@ -48,12 +48,12 @@ struct AddArticleView: View {
                     category: selectedCategory,
                     status: status,
                     publisher: publisher,
-                    content: content
+                    content: text
                 )
                 presentationMode.wrappedValue.dismiss()
             }
             .padding()
-            .disabled(headline.isEmpty)
+            .disabled(headline.isEmpty||selectedCategory.isEmpty)
         }
         .navigationTitle("New articles")
         .navigationBarBackButtonHidden(true)
