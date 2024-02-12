@@ -20,7 +20,7 @@ struct ArticleCellView: View {
                 
                 Text(article.title)
                     .foregroundColor(.primaryText)
-                    .font(.system(size: 22, weight: .semibold, design: .default))
+                    .font(.titleFont(size: 22))
                     .kerning(-0.4)
             }
             .padding()

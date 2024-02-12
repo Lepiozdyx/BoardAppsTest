@@ -21,7 +21,7 @@ struct ArticleDetailView: View {
                 HStack {
                     Text(article.status)
                         .foregroundColor(.primaryText)
-                        .font(.system(size: 17, weight: .semibold, design: .default))
+                        .font(.titleFont(size: 17))
                         .kerning(-0.4)
                     
                     Spacer()
@@ -30,13 +30,13 @@ struct ArticleDetailView: View {
                 
                 Text(article.publisher)
                     .foregroundColor(.secondaryText)
-                    .font(.system(size: 17, weight: .semibold, design: .default))
+                    .font(.titleFont(size: 17))
                     .kerning(-0.4)
                 
                 ScrollView {
                     Text(article.content)
                         .foregroundColor(.primaryText)
-                        .font(.system(size: 17, weight: .regular, design: .default))
+                        .font(.bodyFont(size: 17))
                         .kerning(-0.4)
                 }
             }
