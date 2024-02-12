@@ -23,6 +23,6 @@ struct CustomTextField: View {
 }
 
 #Preview {
-    CustomTextField(value: .constant("Headline"), placeholder: "Headline")
+    CustomTextField(value: .constant(""), placeholder: "Headline")
         .preferredColorScheme(.dark)
 }

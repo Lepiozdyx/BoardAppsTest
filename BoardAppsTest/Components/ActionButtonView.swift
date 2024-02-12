@@ -16,10 +16,10 @@ struct ActionButtonView: View {
             action()
         } label: {
             Text(name)
-                .font(.system(size: 17, weight: .regular, design: .default))
+                .foregroundColor(.primaryText)
+                .font(.bodyFont(size: 17))
                 .kerning(-0.4)
                 .frame(maxWidth: .infinity, maxHeight: 62)
-                .foregroundColor(.primaryText)
                 .background(Color.accentColor)
                 .clipShape(.rect(cornerRadius: 20))
         }

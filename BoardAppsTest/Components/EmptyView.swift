@@ -20,12 +20,12 @@ struct EmptyView: View {
                 
                 Text(title)
                     .foregroundColor(.primaryText)
-                    .font(.system(size: 28, weight: .semibold, design: .default))
+                    .font(.titleFont(size: 28))
                     .kerning(-0.4)
                 
                 Text(subtitle)
                     .foregroundColor(.secondaryText)
-                    .font(.system(size: 17, weight: .regular, design: .default))
+                    .font(.bodyFont(size: 17))
                     .kerning(-0.4)
                 
                 Spacer()

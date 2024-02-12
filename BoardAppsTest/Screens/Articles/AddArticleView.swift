@@ -22,7 +22,7 @@ struct AddArticleView: View {
             Color.background.ignoresSafeArea()
             
             ScrollView(showsIndicators: false) {
-                VStack(spacing: 16) {
+                VStack(spacing: 22) {
                     CustomTextField(value: $headline, placeholder: "Headline")
                         .padding([.leading, .trailing, .top])
                     

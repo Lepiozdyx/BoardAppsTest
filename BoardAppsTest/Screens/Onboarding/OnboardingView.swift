@@ -29,16 +29,15 @@ struct OnboardingView: View {
                 .ignoresSafeArea(edges: .top)
             }
             
-#warning("вынести Fonts в расширение")
             VStack(spacing: 10) {
                 Text(vm.source[vm.currentStep].title)
                     .foregroundColor(.primaryText)
-                    .font(.system(size: 28, weight: .semibold, design: .default))
+                    .font(.titleFont(size: 28))
                     .kerning(-0.4)
                 
                 Text(vm.source[vm.currentStep].description)
                     .foregroundColor(.secondaryText)
-                    .font(.system(size: 17, weight: .regular, design: .default))
+                    .font(.bodyFont(size: 17))
                     .kerning(-0.4)
             }
             .padding(.horizontal)
