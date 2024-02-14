@@ -36,8 +36,8 @@ struct AddArticleView: View {
                     CustomTextField(value: $publisher, placeholder: "Publisher")
                         .padding([.leading, .trailing])
                     
-                    #warning("Create custom TextEditor")
-                    CustomTextField(value: $text, placeholder: "Article text")
+                    #warning("Set custom TextEditor")
+                    CustomTextEditor(title: "Text", text: $text)
                         .padding([.leading, .trailing])
                 }
             }
