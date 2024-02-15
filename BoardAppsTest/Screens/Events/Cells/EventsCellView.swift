@@ -45,6 +45,9 @@ struct EventsCellView: View {
 #Preview {
     ZStack {
         Color.background.ignoresSafeArea()
-        EventsCellView(event: Event.getMockData())
+        ScrollView {
+            EventsCellView(event: Event.getMockData())
+                .padding()
+        }
     }
 }

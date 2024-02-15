@@ -34,9 +34,7 @@ final class ArticlesViewModel: ObservableObject {
     }
     
     private func loadArticle() {
-        if let loadedArticles = storageManager.load(key: StorageKeys.articlesKey) as [Article]?{
-            articles = loadedArticles
-        }
+        articles = storageManager.load(key: StorageKeys.articlesKey) ?? []
     }
     
     private func saveArticle() {

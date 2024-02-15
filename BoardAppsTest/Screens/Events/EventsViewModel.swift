@@ -34,9 +34,7 @@ final class EventsViewModel: ObservableObject {
     }
     
     private func loadEvent() {
-        if let loadedEvents = storageManager.load(key: StorageKeys.eventsKey) as [Event]? {
-            events = loadedEvents
-        }
+        events = storageManager.load(key: StorageKeys.eventsKey) ?? []
     }
     
     private func saveEvent() {

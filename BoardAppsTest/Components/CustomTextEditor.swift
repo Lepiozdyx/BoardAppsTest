@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct CustomTextEditor: View {
+    let title: String
+    
     @Binding var text: String
-    var placeholder: String
+    
+    @State
+    private var frameHeight: CGFloat = 0
+    private let maxFrameHeight: CGFloat = 180
     
     var body: some View {
-        ZStack(alignment: .topLeading) {
-            if text.isEmpty {
-                Text(placeholder)
-                    .foregroundColor(.secondaryText)
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 20)
-            }
-            UITextViewWrapper(text: $text)
-                .padding(.horizontal, 16)
-                .padding(.vertical, 20)
-                .frame(minHeight: 62)
+        HStack(spacing: .zero) {
+            TextView(title: title, text: $text, frameHeight: $frameHeight)
+                .frame(height: min(frameHeight, maxFrameHeight))
+                .padding()
+                .background(Color.background)
+                .cornerRadius(20)
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(text.isEmpty ? .secondaryText: .accentColor, lineWidth: 1)
@@ -32,42 +32,87 @@ struct CustomTextEditor: View {
 }
 
 #Preview {
-    CustomTextEditor(text: .constant(""), placeholder: "Text")
+    CustomTextEditor(title: "Text", text: .constant(""))
         .preferredColorScheme(.dark)
+        .padding()
 }
 
-struct UITextViewWrapper: UIViewRepresentable {
-    typealias UIViewType = UITextView
+private struct TextView: UIViewRepresentable {
+    let title: String
     @Binding var text: String
+    @Binding var frameHeight: CGFloat
+
+    private let fontSize: CGFloat = 17
+    private let leftContentInset: CGFloat = -4
+//    private let topTextContainerInset: CGFloat = 1
+//    private let bottomTextContainerInset: CGFloat = 1
+//    private let rightTextContainerInset: CGFloat = -8
 
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
         textView.delegate = context.coordinator
-        textView.font = UIFont.preferredFont(forTextStyle: .body)
-        textView.isScrollEnabled = true
         textView.isEditable = true
-        textView.isUserInteractionEnabled = true
-        textView.backgroundColor = UIColor.clear // Устанавливаем прозрачный фон
+        textView.isScrollEnabled = true
+        textView.text = title
+        textView.textColor = .secondaryText
+        textView.font = .systemFont(ofSize: fontSize)
+//        textView.textContainerInset = .init(
+//            top: topTextContainerInset,
+//            left: .zero,
+//            bottom: bottomTextContainerInset,
+//            right: rightTextContainerInset
+//        )
+        textView.contentInset = .init(
+            top: .zero,
+            left: leftContentInset,
+            bottom: .zero,
+            right: .zero
+        )
+        textView.backgroundColor = .clear
         return textView
     }
 
-    func updateUIView(_ uiView: UITextView, context: Context) {
-        uiView.text = text
+    func updateUIView(_ uiView: UITextView, context _: Context) {
+        DispatchQueue.main.async {
+            if uiView.text != title {
+                uiView.text = text
+                uiView.textColor = .white
+            }
+            frameHeight = uiView.contentSize.height
+        }
     }
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        TextView.Coordinator(self)
     }
 
-    class Coordinator: NSObject, UITextViewDelegate {
-        var parent: UITextViewWrapper
+    final class Coordinator: NSObject, UITextViewDelegate {
+        private var parent: TextView
+        private let updateDelay = 0.1
 
-        init(_ textViewWrapper: UITextViewWrapper) {
-            self.parent = textViewWrapper
+        init(_ parent: TextView) {
+            self.parent = parent
+        }
+
+        func textViewDidBeginEditing(_ textView: UITextView) {
+            if textView.text == parent.title {
+                textView.text = ""
+                textView.textColor = .white
+            }
         }
 
         func textViewDidChange(_ textView: UITextView) {
-            self.parent.text = textView.text
+            parent.text = textView.text
+            parent.frameHeight = textView.contentSize.height
+        }
+
+        func textViewDidEndEditing(_ textView: UITextView) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + updateDelay) {
+                if textView.text.isEmpty {
+                    textView.text = self.parent.title
+                    textView.textColor = .white
+                }
+            }
         }
     }
 }
