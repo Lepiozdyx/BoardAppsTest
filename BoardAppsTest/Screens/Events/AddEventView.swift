@@ -17,7 +17,7 @@ struct AddEventView: View {
     @State private var teamTwoScore = ""
     @State private var selectedCategory = ""
     @State private var location = ""
-    @State private var date = Date()
+    @State private var date: Date?
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -46,8 +46,7 @@ struct AddEventView: View {
                     CustomTextField(value: $location, placeholder: "Subtitle")
                         .padding([.leading, .trailing])
                     
-                    #warning("Create custom DatePicker")
-                    DatePicker("Enter the date:", selection: $date, displayedComponents: .date)
+                    CustomDatePicker(date: $date)
                         .padding([.leading, .trailing])
                 }
             }
@@ -60,7 +59,7 @@ struct AddEventView: View {
                     teamTwoScore: teamTwoScore,
                     category: selectedCategory,
                     location: location,
-                    date: date
+                    date: date ?? Date()
                 )
                 presentationMode.wrappedValue.dismiss()
             }

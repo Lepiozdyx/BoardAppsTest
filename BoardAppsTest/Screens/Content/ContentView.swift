@@ -21,15 +21,14 @@ struct ContentView: View {
                         Text("Articles")
     //                        .renderingMode(.template)
                     }
-                
-                Text("Events")
+                EventsView()
                     .tabItem {
                         Image(.icEvents)
                         Text("Events")
     //                        .renderingMode(.template)
                     }
                 
-                Text("Budget")
+                BudgetView()
                     .tabItem {
                         Image(.icBudget)
                         Text("Budget")

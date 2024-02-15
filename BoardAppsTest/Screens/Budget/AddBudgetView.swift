@@ -12,7 +12,7 @@ struct AddBudgetView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State private var title = ""
-    @State private var date = Date()
+    @State private var date: Date?
     @State private var amountText = ""
     
     var body: some View {
@@ -23,14 +23,13 @@ struct AddBudgetView: View {
                 CustomTextField(value: $title, placeholder: "Title")
                 
                 HStack {
-                    DatePicker("Enter the date", selection: $date, displayedComponents: .date)
-                        .labelsHidden()
+                    CustomDatePicker(date: $date)
                     
                     Spacer()
                     
                     CustomTextField(value: $amountText, placeholder: "Sum")
                         .keyboardType(.decimalPad)
-                        .frame(width: 171)
+//                        .frame(width: 171)
                 }
                 
                 Spacer()
@@ -40,7 +39,7 @@ struct AddBudgetView: View {
             ActionButtonView(name: "Add") {
                 viewModel.addBudget(
                     title: title,
-                    date: date,
+                    date: date ?? Date(),
                     amount: Double(amountText) ?? 0,
                     type: viewModel.selectedType
                 )
