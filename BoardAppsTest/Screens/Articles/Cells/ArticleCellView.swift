@@ -30,8 +30,8 @@ struct ArticleCellView: View {
 }
 
 #Preview {
-    ZStack {
-        Color.background.ignoresSafeArea()
+    ScrollView {
         ArticleCellView(article: Article.getMockData())
+            .preferredColorScheme(.dark)
     }
 }
