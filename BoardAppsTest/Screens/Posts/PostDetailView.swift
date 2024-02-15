@@ -1,40 +1,29 @@
 //
-//  ArticleDetailView.swift
+//  PostDetailView.swift
 //  BoardAppsTest
 //
-//  Created by Alex on 10.02.2024.
+//  Created by Alex on 15.02.2024.
 //
 
 import SwiftUI
 
-struct ArticleDetailView: View {
+struct PostDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var showingAlert = false
-    let article: Article
+    let post: Post
     let deleteAction: () -> Void
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .leading) {
             Color.background.ignoresSafeArea()
             
             VStack(alignment: .leading) {
-                HStack {
-                    Text(article.status)
-                        .foregroundColor(.primaryText)
-                        .font(.titleFont(size: 17))
-                        .kerning(-0.4)
-                    
-                    Spacer()
-                    CategoryButtonView(category: article.category, isSelected: true, action: {})
-                }
-                
-                Text(article.publisher)
+                Text(post.date.formatted())
                     .foregroundColor(.secondaryText)
-                    .font(.titleFont(size: 17))
                     .kerning(-0.4)
                 
-                ScrollView {
-                    Text(article.content)
+                ScrollView(showsIndicators: false) {
+                    Text(post.text)
                         .foregroundColor(.primaryText)
                         .font(.bodyFont(size: 17))
                         .kerning(-0.4)
@@ -42,8 +31,7 @@ struct ArticleDetailView: View {
             }
             .padding()
         }
-        .navigationTitle(article.title)
-        .navigationBarBackButtonHidden(true)
+        .navigationTitle(post.title)
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 BackButtonView {
@@ -59,20 +47,20 @@ struct ArticleDetailView: View {
         }
         .alert(isPresented: $showingAlert) {
             Alert(
-                title: Text("Delete an article?"),
+                title: Text("Delete post?"),
                 primaryButton: .destructive(Text("Delete")) {
                     deleteAction()
                     presentationMode.wrappedValue.dismiss()
                 },
                 secondaryButton: .cancel()
-            )   
+            )
         }
     }
 }
 
 #Preview {
     NavigationView {
-        ArticleDetailView(article: Article.getMockData(), deleteAction: {})
+        PostDetailView(post: Post.getMockData(), deleteAction: {})
             .preferredColorScheme(.dark)
     }
 }
