@@ -15,7 +15,7 @@ struct ArticleCellView: View {
             RoundedRectangle(cornerRadius: 30)
                 .foregroundColor(.cardBackground)
             
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: 8) {
                 CategoryButtonView(category: article.category, isSelected: true, action: {})
                 
                 Text(article.title)

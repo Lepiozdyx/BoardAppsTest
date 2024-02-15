@@ -13,46 +13,46 @@ struct ContentView: View {
     }
     
     var body: some View {
-//        NavigationView {
-            TabView {
-                ArticlesView()
-                    .tabItem {
-                        Image(.icArticles)
-                        Text("Articles")
-    //                        .renderingMode(.template)
-                    }
-                EventsView()
-                    .tabItem {
-                        Image(.icEvents)
-                        Text("Events")
-    //                        .renderingMode(.template)
-                    }
-                
-                BudgetView()
-                    .tabItem {
-                        Image(.icBudget)
-                        Text("Budget")
-    //                        .renderingMode(.template)
-                    }
-                
-                Text("Posts")
-                    .tabItem {
-                        Image(.icPosts)
-                        Text("Posts")
-    //                        .renderingMode(.template)
-                    }
-                
-                Text("Settings")
-                    .tabItem {
-                        Image(.icSettings)
-                        Text("Settings")
-    //                        .renderingMode(.template)
-                    }
-            }
-//        }
+        TabView {
+            ArticlesView()
+                .tabItem {
+                    Image(.icArticles)
+                        .renderingMode(.template)
+                    Text("Articles")
+                }
+            
+            EventsView()
+                .tabItem {
+                    Image(.icEvents)
+                        .renderingMode(.template)
+                    Text("Events")
+                }
+            
+            BudgetView()
+                .tabItem {
+                    Image(.icBudget)
+                        .renderingMode(.template)
+                    Text("Budget")
+                }
+            
+            PostsView()
+                .tabItem {
+                    Image(.icPosts)
+                        .renderingMode(.template)
+                    Text("Posts")
+                }
+            
+            SettingsView()
+                .tabItem {
+                    Image(.icSettings)
+                        .renderingMode(.template)
+                    Text("Settings")
+                }
+        }
     }
 }
 
 #Preview {
     ContentView()
+        .preferredColorScheme(.dark)
 }

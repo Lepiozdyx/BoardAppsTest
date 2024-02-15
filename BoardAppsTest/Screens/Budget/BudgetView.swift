@@ -22,8 +22,7 @@ struct BudgetView: View {
         NavigationView {
             ZStack {
                 Color.background.ignoresSafeArea()
-                
-#warning("Create custom picker")
+
                 VStack {
                     Picker("Select type", selection: $vm.selectedType) {
                         Text("Income").tag(Budget.BudgetType.income)

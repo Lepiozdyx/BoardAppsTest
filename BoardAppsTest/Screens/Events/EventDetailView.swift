@@ -18,7 +18,7 @@ struct EventDetailView: View {
             Color.background.ignoresSafeArea()
             
             VStack {
-                HStack {
+                HStack(alignment: .bottom) {
                     Text(event.location)
                         .foregroundColor(.secondaryText)
                         .font(.bodyFont(size: 15))
