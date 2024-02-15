@@ -49,6 +49,7 @@ struct DatePickerTextField: UIViewRepresentable {
         textField.placeholder = placeholder
         textField.inputView = datePicker
         
+        // Create a toolbar with a Done button
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)

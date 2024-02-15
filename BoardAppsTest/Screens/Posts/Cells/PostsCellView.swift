@@ -11,11 +11,11 @@ struct PostsCellView: View {
     let post: Post
     
     var body: some View {
-        ZStack(alignment: .topLeading) {
+        ZStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 30)
                 .foregroundColor(.cardBackground)
             
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: 8) {
                 Text(post.date.formatted())
                     .foregroundColor(.secondaryText)
                     .font(.bodyFont(size: 13))

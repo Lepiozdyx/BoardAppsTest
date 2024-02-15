@@ -21,10 +21,10 @@ struct CustomPicker: View {
         } label: {
             HStack {
                 Text(status)
-                    .foregroundColor(status == "Status" ? .secondaryText : .primaryText)
+                    .foregroundColor(status == "Status" ? .secondaryText.opacity(0.6) : .primaryText)
                 
                 Image(systemName: status == "Status" ? "chevron.down" : "chevron.up")
-                    .foregroundColor(status == "Status" ? .secondaryText : .primaryText)
+                    .foregroundColor(status == "Status" ? .secondaryText.opacity(0.6) : .primaryText)
                 
                 Spacer()
             }
