@@ -14,6 +14,10 @@
 		FA0CDF0C2B7E7BBE0010F73B /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CDF0B2B7E7BBE0010F73B /* AddPostView.swift */; };
 		FA0CDF0E2B7E7BCB0010F73B /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CDF0D2B7E7BCB0010F73B /* PostDetailView.swift */; };
 		FA0CDF112B7E7C080010F73B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CDF102B7E7C080010F73B /* Post.swift */; };
+		FA0CDF132B7E8A870010F73B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CDF122B7E8A870010F73B /* SettingsView.swift */; };
+		FA0CDF152B7E8B350010F73B /* SettingsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CDF142B7E8B350010F73B /* SettingsButtonView.swift */; };
+		FA0CDF172B7E963D0010F73B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CDF162B7E963D0010F73B /* SettingsViewModel.swift */; };
+		FA0CDF192B7E9C370010F73B /* ShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CDF182B7E9C370010F73B /* ShareSheetView.swift */; };
 		FA41E6FA2B7BD204008B7008 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41E6F92B7BD204008B7008 /* Budget.swift */; };
 		FA41E6FC2B7BD5BE008B7008 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41E6FB2B7BD5BE008B7008 /* BudgetViewModel.swift */; };
 		FA41E6FE2B7BD940008B7008 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41E6FD2B7BD940008B7008 /* BudgetView.swift */; };
@@ -60,6 +64,10 @@
 		FA0CDF0B2B7E7BBE0010F73B /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
 		FA0CDF0D2B7E7BCB0010F73B /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		FA0CDF102B7E7C080010F73B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		FA0CDF122B7E8A870010F73B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FA0CDF142B7E8B350010F73B /* SettingsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonView.swift; sourceTree = "<group>"; };
+		FA0CDF162B7E963D0010F73B /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		FA0CDF182B7E9C370010F73B /* ShareSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetView.swift; sourceTree = "<group>"; };
 		FA41E6F92B7BD204008B7008 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		FA41E6FB2B7BD5BE008B7008 /* BudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModel.swift; sourceTree = "<group>"; };
 		FA41E6FD2B7BD940008B7008 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
@@ -279,6 +287,8 @@
 		FAC4873D2B750A8900943BDB /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				FA0CDF162B7E963D0010F73B /* SettingsViewModel.swift */,
+				FA0CDF122B7E8A870010F73B /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -295,6 +305,8 @@
 				FA4CB1082B7A4CDB00D84DF4 /* CustomTextEditor.swift */,
 				FAE703A32B76DADA00D55822 /* CustomTextField.swift */,
 				FA6E7B772B76A8EC000AE811 /* EmptyView.swift */,
+				FA0CDF142B7E8B350010F73B /* SettingsButtonView.swift */,
+				FA0CDF182B7E9C370010F73B /* ShareSheetView.swift */,
 				FA6E7B752B76A709000AE811 /* ToolbarButtonView.swift */,
 			);
 			path = Components;
@@ -405,6 +417,7 @@
 				FA41E6FE2B7BD940008B7008 /* BudgetView.swift in Sources */,
 				FA4CB1142B7A6E5600D84DF4 /* Date+Ext.swift in Sources */,
 				FA41E6FA2B7BD204008B7008 /* Budget.swift in Sources */,
+				FA0CDF152B7E8B350010F73B /* SettingsButtonView.swift in Sources */,
 				FA0CDF042B7E30990010F73B /* CustomDatePicker.swift in Sources */,
 				FA4C95702B7CFAAC00A554C2 /* AddBudgetView.swift in Sources */,
 				FA6E7B6E2B768DA0000AE811 /* Article.swift in Sources */,
@@ -416,9 +429,11 @@
 				FA6E7B722B769106000AE811 /* ArticlesView.swift in Sources */,
 				FA6E7B782B76A8EC000AE811 /* EmptyView.swift in Sources */,
 				FA4CB10D2B7A5B8000D84DF4 /* EventsCellView.swift in Sources */,
+				FA0CDF172B7E963D0010F73B /* SettingsViewModel.swift in Sources */,
 				FAC487432B7555FA00943BDB /* OnboardingView.swift in Sources */,
 				FA6E7B822B76D5A0000AE811 /* BackButtonView.swift in Sources */,
 				FA4CB1062B7A475A00D84DF4 /* Font+Ext.swift in Sources */,
+				FA0CDF132B7E8A870010F73B /* SettingsView.swift in Sources */,
 				FA0CDF0A2B7E7BB10010F73B /* PostsCellView.swift in Sources */,
 				FAF4C7BA2B7821A200A4C5F8 /* ArticleDetailView.swift in Sources */,
 				FA4CB1122B7A5F3000D84DF4 /* Event.swift in Sources */,
@@ -432,6 +447,7 @@
 				FAC487452B75566800943BDB /* Onboarding.swift in Sources */,
 				FA41E6FC2B7BD5BE008B7008 /* BudgetViewModel.swift in Sources */,
 				FA6E7B742B769300000AE811 /* StorageManager.swift in Sources */,
+				FA0CDF192B7E9C370010F73B /* ShareSheetView.swift in Sources */,
 				FA6E7B7C2B76B17E000AE811 /* CategoryButtonView.swift in Sources */,
 				FA4CB1102B7A5BA000D84DF4 /* EventsViewModel.swift in Sources */,
 				FA6E7B762B76A709000AE811 /* ToolbarButtonView.swift in Sources */,
