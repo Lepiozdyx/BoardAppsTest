@@ -11,6 +11,7 @@ struct SettingsView: View {
     @StateObject var viewModel = SettingsViewModel()
     @State private var showingResetConfirmation = false
     @State private var showingShareSheet = false
+    @State private var showingUsageProfile = false
     let items: [Any] = []
     
     var body: some View {
@@ -38,9 +39,10 @@ struct SettingsView: View {
                     SettingsButtonView(
                         icon: .icDocs,
                         title: "Usage profile",
-                        background: .cardBackground,
-                        action: {}
-                    )
+                        background: .cardBackground
+                    ) {
+                        showingUsageProfile.toggle()
+                    }
                     
                     SettingsButtonView(
                         icon: .icResetarrows,
@@ -67,6 +69,11 @@ struct SettingsView: View {
             }
             .sheet(isPresented: $showingShareSheet) {
                 ShareSheetView(items: items)
+            }
+            .sheet(isPresented: $showingUsageProfile) {
+                NavigationView {
+                    UsageProfileView()
+                }
             }
         }
     }

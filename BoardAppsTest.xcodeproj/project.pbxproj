@@ -32,6 +32,7 @@
 		FA4CB1142B7A6E5600D84DF4 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB1132B7A6E5600D84DF4 /* Date+Ext.swift */; };
 		FA4CB1162B7AA8BE00D84DF4 /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB1152B7AA8BE00D84DF4 /* AddEventView.swift */; };
 		FA4CB1182B7ABA3F00D84DF4 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB1172B7ABA3F00D84DF4 /* EventDetailView.swift */; };
+		FA558CB02B7FA9DC000FF3FA /* UsageProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA558CAF2B7FA9DC000FF3FA /* UsageProfileView.swift */; };
 		FA6E7B6E2B768DA0000AE811 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E7B6D2B768DA0000AE811 /* Article.swift */; };
 		FA6E7B702B7690F6000AE811 /* ArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E7B6F2B7690F6000AE811 /* ArticlesViewModel.swift */; };
 		FA6E7B722B769106000AE811 /* ArticlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E7B712B769106000AE811 /* ArticlesView.swift */; };
@@ -82,6 +83,7 @@
 		FA4CB1132B7A6E5600D84DF4 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		FA4CB1152B7AA8BE00D84DF4 /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
 		FA4CB1172B7ABA3F00D84DF4 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		FA558CAF2B7FA9DC000FF3FA /* UsageProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageProfileView.swift; sourceTree = "<group>"; };
 		FA6E7B6D2B768DA0000AE811 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		FA6E7B6F2B7690F6000AE811 /* ArticlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewModel.swift; sourceTree = "<group>"; };
 		FA6E7B712B769106000AE811 /* ArticlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesView.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 			children = (
 				FA0CDF162B7E963D0010F73B /* SettingsViewModel.swift */,
 				FA0CDF122B7E8A870010F73B /* SettingsView.swift */,
+				FA558CAF2B7FA9DC000FF3FA /* UsageProfileView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				FA0CDF082B7E7B960010F73B /* PostsViewModel.swift in Sources */,
 				FA6E7B702B7690F6000AE811 /* ArticlesViewModel.swift in Sources */,
 				FA4CB1092B7A4CDB00D84DF4 /* CustomTextEditor.swift in Sources */,
+				FA558CB02B7FA9DC000FF3FA /* UsageProfileView.swift in Sources */,
 				FAC487272B75067600943BDB /* BoardAppsTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -590,6 +594,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BoardAppsTest/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Control all in one";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -623,6 +628,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BoardAppsTest/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Control all in one";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
