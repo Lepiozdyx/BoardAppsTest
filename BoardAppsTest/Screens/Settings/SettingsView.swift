@@ -12,7 +12,7 @@ struct SettingsView: View {
     @State private var showingResetConfirmation = false
     @State private var showingShareSheet = false
     @State private var showingUsageProfile = false
-    let items: [Any] = []
+    let items: [Any] = [URL(string: "https://apps.apple.com/us/app/control-all-in-one/id6478009366")!]
     
     var body: some View {
         NavigationView {
