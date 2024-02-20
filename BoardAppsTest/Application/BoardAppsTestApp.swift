@@ -10,15 +10,25 @@ import SwiftUI
 @main
 struct BoardAppsTestApp: App {
     @AppStorage("isOnboarding") var isOnboarding = false
+    @StateObject private var appState = AppState()
     
     var body: some Scene {
         WindowGroup {
-            if isOnboarding {
+            if appState.isInitialized {
                 ContentView()
                     .preferredColorScheme(.dark)
             } else {
-                OnboardingView()
+                LoadingView()
+                    .onAppear {
+                        appState.initializeApp()
+                    }
             }
+//            if isOnboarding {
+//                ContentView()
+//                    .preferredColorScheme(.dark)
+//            } else {
+//                OnboardingView()
+//            }
         }
     }
 }
