@@ -49,6 +49,8 @@
 		FA733F0E2B84D54C00AD639F /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA733F0D2B84D54C00AD639F /* APIConfiguration.swift */; };
 		FA733F102B84DBBC00AD639F /* DeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA733F0F2B84DBBC00AD639F /* DeviceData.swift */; };
 		FA733F122B84DBDE00AD639F /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA733F112B84DBDE00AD639F /* DeviceInfo.swift */; };
+		FAC09FAB2B85F93B009B3EF3 /* CustomOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC09FAA2B85F93B009B3EF3 /* CustomOnboardingView.swift */; };
+		FAC09FAF2B86044C009B3EF3 /* CustomOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC09FAE2B86044C009B3EF3 /* CustomOnboardingViewModel.swift */; };
 		FAC487272B75067600943BDB /* BoardAppsTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC487262B75067600943BDB /* BoardAppsTestApp.swift */; };
 		FAC487292B75067600943BDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC487282B75067600943BDB /* ContentView.swift */; };
 		FAC4872B2B75067800943BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC4872A2B75067800943BDB /* Assets.xcassets */; };
@@ -105,6 +107,8 @@
 		FA733F0D2B84D54C00AD639F /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		FA733F0F2B84DBBC00AD639F /* DeviceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceData.swift; sourceTree = "<group>"; };
 		FA733F112B84DBDE00AD639F /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		FAC09FAA2B85F93B009B3EF3 /* CustomOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOnboardingView.swift; sourceTree = "<group>"; };
+		FAC09FAE2B86044C009B3EF3 /* CustomOnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOnboardingViewModel.swift; sourceTree = "<group>"; };
 		FAC487232B75067600943BDB /* BoardAppsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoardAppsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC487262B75067600943BDB /* BoardAppsTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardAppsTestApp.swift; sourceTree = "<group>"; };
 		FAC487282B75067600943BDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -179,6 +183,24 @@
 				FA733F0A2B84D46700AD639F /* NetworkManager.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		FAC09FAC2B860424009B3EF3 /* Standart */ = {
+			isa = PBXGroup;
+			children = (
+				FAC487422B7555FA00943BDB /* OnboardingView.swift */,
+				FAC487462B75592600943BDB /* OnboardingViewModel.swift */,
+			);
+			path = Standart;
+			sourceTree = "<group>";
+		};
+		FAC09FAD2B860436009B3EF3 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				FAC09FAA2B85F93B009B3EF3 /* CustomOnboardingView.swift */,
+				FAC09FAE2B86044C009B3EF3 /* CustomOnboardingViewModel.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		FAC4871A2B75067600943BDB = {
@@ -262,8 +284,8 @@
 			isa = PBXGroup;
 			children = (
 				FAC487442B75566800943BDB /* Onboarding.swift */,
-				FAC487422B7555FA00943BDB /* OnboardingView.swift */,
-				FAC487462B75592600943BDB /* OnboardingViewModel.swift */,
+				FAC09FAC2B860424009B3EF3 /* Standart */,
+				FAC09FAD2B860436009B3EF3 /* Custom */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -473,6 +495,7 @@
 				FA4CB1062B7A475A00D84DF4 /* Font+Ext.swift in Sources */,
 				FA0CDF132B7E8A870010F73B /* SettingsView.swift in Sources */,
 				FA0CDF0A2B7E7BB10010F73B /* PostsCellView.swift in Sources */,
+				FAC09FAF2B86044C009B3EF3 /* CustomOnboardingViewModel.swift in Sources */,
 				FAF4C7BA2B7821A200A4C5F8 /* ArticleDetailView.swift in Sources */,
 				FA4CB1122B7A5F3000D84DF4 /* Event.swift in Sources */,
 				FAE703A42B76DADA00D55822 /* CustomTextField.swift in Sources */,
@@ -482,6 +505,7 @@
 				FA6E7B7A2B76AA1A000AE811 /* ArticleCellView.swift in Sources */,
 				FAC487292B75067600943BDB /* ContentView.swift in Sources */,
 				FAE703A62B76DEE500D55822 /* CustomPicker.swift in Sources */,
+				FAC09FAB2B85F93B009B3EF3 /* CustomOnboardingView.swift in Sources */,
 				FA0CDF062B7E7B850010F73B /* PostsView.swift in Sources */,
 				FAC487452B75566800943BDB /* Onboarding.swift in Sources */,
 				FA41E6FC2B7BD5BE008B7008 /* BudgetViewModel.swift in Sources */,

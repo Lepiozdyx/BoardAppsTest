@@ -1,15 +1,14 @@
 //
-//  OnboardingView.swift
+//  CustomOnboardingView.swift
 //  BoardAppsTest
 //
-//  Created by Alex on 08.02.2024.
+//  Created by Alex on 21.02.2024.
 //
 
 import SwiftUI
 
-struct OnboardingView: View {
-    @StateObject var vm = OnboardingViewModel()
-    @AppStorage("isOnboarding") var isOnboarding = false
+struct CustomOnboardingView: View {
+    @StateObject var vm = CustomOnboardingViewModel()
     
     var body: some View {
         ZStack {
@@ -28,6 +27,11 @@ struct OnboardingView: View {
                 }
                 .tabViewStyle(PageTabViewStyle())
                 .ignoresSafeArea(edges: .top)
+                .onChange(of: vm.currentStep) { newValue in
+                    if newValue == 1 {
+                        vm.requestReview()
+                    }
+                }
                 
                 VStack(spacing: 10) {
                     Text(vm.source[vm.currentStep].title)
@@ -41,10 +45,9 @@ struct OnboardingView: View {
                         .kerning(-0.4)
                     
                     ActionButtonView(name: "Next") {
-                        if vm.stepHandler() {
-                            isOnboarding.toggle()
-                        }                        
+                        _ = vm.stepHandler()
                     }
+                    .padding(.top)
                 }
                 .padding(.horizontal)
             }
@@ -55,5 +58,5 @@ struct OnboardingView: View {
 }
 
 #Preview {
-    OnboardingView()
+    CustomOnboardingView()
 }
