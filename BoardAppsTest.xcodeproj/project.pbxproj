@@ -51,6 +51,8 @@
 		FA733F122B84DBDE00AD639F /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA733F112B84DBDE00AD639F /* DeviceInfo.swift */; };
 		FAC09FAB2B85F93B009B3EF3 /* CustomOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC09FAA2B85F93B009B3EF3 /* CustomOnboardingView.swift */; };
 		FAC09FAF2B86044C009B3EF3 /* CustomOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC09FAE2B86044C009B3EF3 /* CustomOnboardingViewModel.swift */; };
+		FAC09FB22B861AA6009B3EF3 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC09FB12B861AA6009B3EF3 /* LoadingViewModel.swift */; };
+		FAC09FB42B867233009B3EF3 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC09FB32B867233009B3EF3 /* RootView.swift */; };
 		FAC487272B75067600943BDB /* BoardAppsTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC487262B75067600943BDB /* BoardAppsTestApp.swift */; };
 		FAC487292B75067600943BDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC487282B75067600943BDB /* ContentView.swift */; };
 		FAC4872B2B75067800943BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC4872A2B75067800943BDB /* Assets.xcassets */; };
@@ -109,6 +111,8 @@
 		FA733F112B84DBDE00AD639F /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		FAC09FAA2B85F93B009B3EF3 /* CustomOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOnboardingView.swift; sourceTree = "<group>"; };
 		FAC09FAE2B86044C009B3EF3 /* CustomOnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOnboardingViewModel.swift; sourceTree = "<group>"; };
+		FAC09FB12B861AA6009B3EF3 /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
+		FAC09FB32B867233009B3EF3 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FAC487232B75067600943BDB /* BoardAppsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoardAppsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC487262B75067600943BDB /* BoardAppsTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardAppsTestApp.swift; sourceTree = "<group>"; };
 		FAC487282B75067600943BDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -203,6 +207,15 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
+		FAC09FB02B861A92009B3EF3 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				FA733F052B84BCE700AD639F /* LoadingView.swift */,
+				FAC09FB12B861AA6009B3EF3 /* LoadingViewModel.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 		FAC4871A2B75067600943BDB = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +266,8 @@
 		FAC487352B7509AD00943BDB /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FAC09FB32B867233009B3EF3 /* RootView.swift */,
+				FAC09FB02B861A92009B3EF3 /* Loading */,
 				FAC487382B7509F600943BDB /* Onboarding */,
 				FAC487362B7509BB00943BDB /* Content */,
 				FAC487392B750A3600943BDB /* Articles */,
@@ -359,7 +374,6 @@
 				FA4CB1082B7A4CDB00D84DF4 /* CustomTextEditor.swift */,
 				FAE703A32B76DADA00D55822 /* CustomTextField.swift */,
 				FA6E7B772B76A8EC000AE811 /* EmptyView.swift */,
-				FA733F052B84BCE700AD639F /* LoadingView.swift */,
 				FA0CDF142B7E8B350010F73B /* SettingsButtonView.swift */,
 				FA0CDF182B7E9C370010F73B /* ShareSheetView.swift */,
 				FA6E7B752B76A709000AE811 /* ToolbarButtonView.swift */,
@@ -519,6 +533,8 @@
 				FA4CB1092B7A4CDB00D84DF4 /* CustomTextEditor.swift in Sources */,
 				FA558CB02B7FA9DC000FF3FA /* UsageProfileView.swift in Sources */,
 				FAC487272B75067600943BDB /* BoardAppsTestApp.swift in Sources */,
+				FAC09FB22B861AA6009B3EF3 /* LoadingViewModel.swift in Sources */,
+				FAC09FB42B867233009B3EF3 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

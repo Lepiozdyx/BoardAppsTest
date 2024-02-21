@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OnboardingView: View {
     @StateObject var vm = OnboardingViewModel()
-    @AppStorage("isOnboarding") var isOnboarding = false
+    @Binding var isOnboarding: Bool
     
     var body: some View {
         ZStack {
@@ -42,8 +42,8 @@ struct OnboardingView: View {
                     
                     ActionButtonView(name: "Next") {
                         if vm.stepHandler() {
-                            isOnboarding.toggle()
-                        }                        
+                            isOnboarding = true
+                        }
                     }
                     .padding(.top)
                 }
@@ -56,5 +56,5 @@ struct OnboardingView: View {
 }
 
 #Preview {
-    OnboardingView()
+    OnboardingView(isOnboarding: .constant(false))
 }

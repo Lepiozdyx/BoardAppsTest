@@ -38,10 +38,6 @@ final class NetworkManager {
                 return
             }
             
-//            if let responseString = String(data: data, encoding: .utf8) {
-//                print("Ответ сервера: \(responseString)")
-//            }
-            
             DispatchQueue.main.async {
                 do {
                     if let jsonObject = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
