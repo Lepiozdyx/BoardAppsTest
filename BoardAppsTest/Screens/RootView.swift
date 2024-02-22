@@ -10,6 +10,7 @@ import SwiftUI
 struct RootView: View {
     @StateObject private var vm = LoadingViewModel()
     @AppStorage("isOnboardingCompleted") var isOnboardingCompleted = false
+    @AppStorage("isCustomOnboardingCompleted") var isCustomOnboardingCompleted = false
     
     var body: some View {
         ZStack {
@@ -21,8 +22,10 @@ struct RootView: View {
                     } else {
                         OnboardingView(isOnboarding: $isOnboardingCompleted)
                     }
+                } else if isCustomOnboardingCompleted {
+                    WebView(url: vm.initialURL ?? URL(string: "https://google.com")!)
                 } else {
-                    CustomOnboardingView()
+                    CustomOnboardingView(isOnboarding: $isCustomOnboardingCompleted)
                 }
             } else {
                 LoadingView()

@@ -12,19 +12,12 @@ import OneSignalFramework
 final class CustomOnboardingViewModel: ObservableObject {
     @Published var source = Onboarding.customStep
     @Published var currentStep = 0
-    @Published var isOnboardingCompleted = false
-    @Published var initialURL: URL?
-    
-    init() {
-        fetchInitialURL()
-    }
     
     func stepHandler() -> Bool {
         if currentStep < source.count - 1 {
             self.currentStep += 1
             return false
         } else {
-            self.isOnboardingCompleted = true
             return true
         }
     }
@@ -39,21 +32,5 @@ final class CustomOnboardingViewModel: ObservableObject {
         OneSignal.Notifications.requestPermission({ accepted in
             print("User accepted notifications: \(accepted)")
         }, fallbackToSettings: true)
-    }
-    
-    private func fetchInitialURL() {
-        RemoteConfigService.shared.getFirebaseData(
-            field: APIConfiguration.shared.initialUrlName,
-            dataType: .string
-        ) { [weak self] result in
-            DispatchQueue.main.async {
-                if let urlString = result as? String, let url = URL(string: urlString) {
-                    self?.initialURL = url
-                } else {
-                    // Установка значения по умолчанию, если URL не найден
-                    self?.initialURL = URL(string: "https://google.com")
-                }
-            }
-        }
-    }
+    }        
 }

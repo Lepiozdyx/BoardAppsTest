@@ -21,9 +21,9 @@ struct WebView: UIViewRepresentable {
         uiView.load(request)
     }
     
-    static func dismantleUIView(_ uiView: WKWebView, coordinator: ()) {
+    func dismantleUIView(_ uiView: WKWebView, coordinator: ()) {
         if let url = uiView.url {
-            saveLastVisitedPage(url: url)
+            WebView.saveLastVisitedPage(url: url)
         }
     }
 }
