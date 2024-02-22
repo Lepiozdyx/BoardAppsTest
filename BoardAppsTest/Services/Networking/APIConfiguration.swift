@@ -18,5 +18,17 @@ final class APIConfiguration {
         return "range"
     }
     
+    var metrica: String {
+        return "33f72c54-7342-4a44-8539-f11874238c42"
+    }
+    
+    var apphud: String {
+        return "app_R3Zf8goy4MwPKaYzcwebvu3zUP2Rfn"
+    }
+    
+    var remoteConfigKey: String {
+        return "lastDate"
+    }
+    
     private init() {}
 }

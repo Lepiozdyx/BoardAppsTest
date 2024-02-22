@@ -22,7 +22,8 @@ struct LoadingView: View {
                     .progressViewStyle(.linear)
                     .frame(width: 190)
                     .onAppear {
-                        vm.checkStatus()
+                        print("LoadingView: Экран загрузки появился.")
+//                        vm.checkStatus()
                     }
             }
             .padding()

@@ -49,10 +49,16 @@
 		FA733F0E2B84D54C00AD639F /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA733F0D2B84D54C00AD639F /* APIConfiguration.swift */; };
 		FA733F102B84DBBC00AD639F /* DeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA733F0F2B84DBBC00AD639F /* DeviceData.swift */; };
 		FA733F122B84DBDE00AD639F /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA733F112B84DBDE00AD639F /* DeviceInfo.swift */; };
+		FAB9DB5E2B8754A900720277 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FAB9DB5D2B8754A900720277 /* FirebaseRemoteConfigSwift */; };
 		FAC09FAB2B85F93B009B3EF3 /* CustomOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC09FAA2B85F93B009B3EF3 /* CustomOnboardingView.swift */; };
 		FAC09FAF2B86044C009B3EF3 /* CustomOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC09FAE2B86044C009B3EF3 /* CustomOnboardingViewModel.swift */; };
 		FAC09FB22B861AA6009B3EF3 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC09FB12B861AA6009B3EF3 /* LoadingViewModel.swift */; };
 		FAC09FB42B867233009B3EF3 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC09FB32B867233009B3EF3 /* RootView.swift */; };
+		FAC09FB72B868F38009B3EF3 /* ApphudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = FAC09FB62B868F38009B3EF3 /* ApphudSDK */; };
+		FAC09FBA2B869215009B3EF3 /* YandexMobileMetrica in Frameworks */ = {isa = PBXBuildFile; productRef = FAC09FB92B869215009B3EF3 /* YandexMobileMetrica */; };
+		FAC09FC92B869A20009B3EF3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAC09FC82B869A1F009B3EF3 /* GoogleService-Info.plist */; };
+		FAC09FCB2B86ACD0009B3EF3 /* RemoteConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC09FCA2B86ACD0009B3EF3 /* RemoteConfigService.swift */; };
+		FAC09FD02B86B0A1009B3EF3 /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = FAC09FCF2B86B0A1009B3EF3 /* OneSignalFramework */; };
 		FAC487272B75067600943BDB /* BoardAppsTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC487262B75067600943BDB /* BoardAppsTestApp.swift */; };
 		FAC487292B75067600943BDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC487282B75067600943BDB /* ContentView.swift */; };
 		FAC4872B2B75067800943BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC4872A2B75067800943BDB /* Assets.xcassets */; };
@@ -113,6 +119,8 @@
 		FAC09FAE2B86044C009B3EF3 /* CustomOnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOnboardingViewModel.swift; sourceTree = "<group>"; };
 		FAC09FB12B861AA6009B3EF3 /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
 		FAC09FB32B867233009B3EF3 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		FAC09FC82B869A1F009B3EF3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAC09FCA2B86ACD0009B3EF3 /* RemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigService.swift; sourceTree = "<group>"; };
 		FAC487232B75067600943BDB /* BoardAppsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoardAppsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC487262B75067600943BDB /* BoardAppsTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardAppsTestApp.swift; sourceTree = "<group>"; };
 		FAC487282B75067600943BDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -132,6 +140,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC09FD02B86B0A1009B3EF3 /* OneSignalFramework in Frameworks */,
+				FAC09FB72B868F38009B3EF3 /* ApphudSDK in Frameworks */,
+				FAB9DB5E2B8754A900720277 /* FirebaseRemoteConfigSwift in Frameworks */,
+				FAC09FBA2B869215009B3EF3 /* YandexMobileMetrica in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +197,7 @@
 				FA733F0F2B84DBBC00AD639F /* DeviceData.swift */,
 				FA733F112B84DBDE00AD639F /* DeviceInfo.swift */,
 				FA733F0A2B84D46700AD639F /* NetworkManager.swift */,
+				FAC09FCA2B86ACD0009B3EF3 /* RemoteConfigService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -259,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC487262B75067600943BDB /* BoardAppsTestApp.swift */,
+				FAC09FC82B869A1F009B3EF3 /* GoogleService-Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -426,6 +440,12 @@
 			dependencies = (
 			);
 			name = BoardAppsTest;
+			packageProductDependencies = (
+				FAC09FB62B868F38009B3EF3 /* ApphudSDK */,
+				FAC09FB92B869215009B3EF3 /* YandexMobileMetrica */,
+				FAC09FCF2B86B0A1009B3EF3 /* OneSignalFramework */,
+				FAB9DB5D2B8754A900720277 /* FirebaseRemoteConfigSwift */,
+			);
 			productName = BoardAppsTest;
 			productReference = FAC487232B75067600943BDB /* BoardAppsTest.app */;
 			productType = "com.apple.product-type.application";
@@ -454,6 +474,12 @@
 				Base,
 			);
 			mainGroup = FAC4871A2B75067600943BDB;
+			packageReferences = (
+				FAC09FB52B868F38009B3EF3 /* XCRemoteSwiftPackageReference "ApphudSDK" */,
+				FAC09FB82B869215009B3EF3 /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */,
+				FAC09FCC2B86B0A1009B3EF3 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */,
+				FAB9DB2C2B8754A900720277 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = FAC487242B75067600943BDB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -470,6 +496,7 @@
 			files = (
 				FAC4872E2B75067800943BDB /* Preview Assets.xcassets in Resources */,
 				FAC4872B2B75067800943BDB /* Assets.xcassets in Resources */,
+				FAC09FC92B869A20009B3EF3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +562,7 @@
 				FAC487272B75067600943BDB /* BoardAppsTestApp.swift in Sources */,
 				FAC09FB22B861AA6009B3EF3 /* LoadingViewModel.swift in Sources */,
 				FAC09FB42B867233009B3EF3 /* RootView.swift in Sources */,
+				FAC09FCB2B86ACD0009B3EF3 /* RemoteConfigService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -748,6 +776,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FAB9DB2C2B8754A900720277 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		FAC09FB52B868F38009B3EF3 /* XCRemoteSwiftPackageReference "ApphudSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apphud/ApphudSDK.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.8;
+			};
+		};
+		FAC09FB82B869215009B3EF3 /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yandexmobile/metrica-sdk-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.2;
+			};
+		};
+		FAC09FCC2B86B0A1009B3EF3 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-iOS-SDK.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAB9DB5D2B8754A900720277 /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAB9DB2C2B8754A900720277 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
+		};
+		FAC09FB62B868F38009B3EF3 /* ApphudSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAC09FB52B868F38009B3EF3 /* XCRemoteSwiftPackageReference "ApphudSDK" */;
+			productName = ApphudSDK;
+		};
+		FAC09FB92B869215009B3EF3 /* YandexMobileMetrica */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAC09FB82B869215009B3EF3 /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */;
+			productName = YandexMobileMetrica;
+		};
+		FAC09FCF2B86B0A1009B3EF3 /* OneSignalFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAC09FCC2B86B0A1009B3EF3 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
+			productName = OneSignalFramework;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FAC4871B2B75067600943BDB /* Project object */;
 }
