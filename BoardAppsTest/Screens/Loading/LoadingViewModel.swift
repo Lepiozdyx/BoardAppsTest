@@ -15,30 +15,30 @@ final class LoadingViewModel: ObservableObject {
         checkLaunchDate()
     }
     
-//    #warning(" ")
-//    func checkStatus() {
-//        print("LoadingViewModel: Выполнение ПСЕВДОсетевого запроса.")
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//            self.shouldShowOnboarding = true // Или false для проверки
-//        }
-//    }
-    
+    #warning(" ")
     func checkStatus() {
-      print("LoadingViewModel: Выполнение сетевого запроса.")
-        let deviceData = DeviceInfo.collectData()
-        
-        NetworkManager.networkManager.postRequest(endpoint: deviceData) { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let success):
-                    self?.shouldShowOnboarding = success
-                case .failure(let error):
-//                    print(error.localizedDescription)
-                    self?.checkIsDeadParameter()
-                }
-            }
+        print("LoadingViewModel: Выполнение ПСЕВДОсетевого запроса.")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.shouldShowOnboarding = true // Или false для проверки
         }
     }
+    
+//    func checkStatus() {
+//      print("LoadingViewModel: Выполнение сетевого запроса.")
+//        let deviceData = DeviceInfo.collectData()
+//        
+//        NetworkManager.networkManager.postRequest(endpoint: deviceData) { [weak self] result in
+//            DispatchQueue.main.async {
+//                switch result {
+//                case .success(let success):
+//                    self?.shouldShowOnboarding = success
+//                case .failure(let error):
+//                    print(error.localizedDescription)
+//                    self?.checkIsDeadParameter()
+//                }
+//            }
+//        }
+//    }
     
     private func checkLaunchDate() {
         print("LoadingViewModel: Проверка даты через RemoteConfigService.")

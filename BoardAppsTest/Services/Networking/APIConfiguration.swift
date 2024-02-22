@@ -38,5 +38,9 @@ final class APIConfiguration {
         return "url_link"
     }
     
+    var onesignal: String {
+        return "030baf23-25df-4953-a340-aeb137213f76"
+    }
+    
     private init() {}
 }

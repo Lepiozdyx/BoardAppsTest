@@ -27,7 +27,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         
         Apphud.start(apiKey: APIConfiguration.shared.apphud)
         
-//        OneSignal.initialize("030baf23-25df-4953-a340-aeb137213f76", withLaunchOptions: launchOptions)
+//        OneSignal.initialize(APIConfiguration.shared.onesignal, withLaunchOptions: launchOptions)
 //        OneSignal.login(Apphud.userID())
         
         let configuration = YMMYandexMetricaConfiguration(apiKey: APIConfiguration.shared.metrica)
