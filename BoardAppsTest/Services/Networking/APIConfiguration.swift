@@ -30,5 +30,13 @@ final class APIConfiguration {
         return "lastDate"
     }
     
+    var responceWaitingParameterName: String {
+        return "isDead"
+    }
+    
+    var initialUrlName: String {
+        return "url_link"
+    }
+    
     private init() {}
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 import ApphudSDK
-import OneSignalFramework
+//import OneSignalFramework
 import YandexMobileMetrica
 import Firebase
 
@@ -27,17 +27,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         
         Apphud.start(apiKey: APIConfiguration.shared.apphud)
         
-        // OneSignal
-//        OneSignal.initWithLaunchOptions(launchOptions)
-//        OneSignal.setAppId("030baf23-25df-4953-a340-aeb137213f76")
-        
-        // Apphud.userID() должен быть использован после инициализации Apphud
-//        if let userID = Apphud.userID() {
-//            OneSignal.setExternalUserId(userID)
-//        }
-        
-        OneSignal.initialize("030baf23-25df-4953-a340-aeb137213f76", withLaunchOptions: launchOptions)
-        OneSignal.login(Apphud.userID())
+//        OneSignal.initialize("030baf23-25df-4953-a340-aeb137213f76", withLaunchOptions: launchOptions)
+//        OneSignal.login(Apphud.userID())
         
         let configuration = YMMYandexMetricaConfiguration(apiKey: APIConfiguration.shared.metrica)
         YMMYandexMetrica.activate(with: configuration!)

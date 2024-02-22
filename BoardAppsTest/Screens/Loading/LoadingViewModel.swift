@@ -27,14 +27,14 @@ final class LoadingViewModel: ObservableObject {
       print("LoadingViewModel: Выполнение сетевого запроса.")
         let deviceData = DeviceInfo.collectData()
         
-        NetworkManager.networkManager.postRequest(endpoint: deviceData) { result in
+        NetworkManager.networkManager.postRequest(endpoint: deviceData) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let success):
-                    print("Responce: \(success)")
-                    self.shouldShowOnboarding = success
+                    self?.shouldShowOnboarding = success
                 case .failure(let error):
-                    print(error.localizedDescription)
+//                    print(error.localizedDescription)
+                    self?.checkIsDeadParameter()
                 }
             }
         }
@@ -49,6 +49,19 @@ final class LoadingViewModel: ObservableObject {
                     self?.shouldShowOnboarding = true
                 } else {
                     self?.checkStatus()
+                }
+            }
+        }
+    }
+    
+    private func checkIsDeadParameter() {
+        RemoteConfigService.shared.getFirebaseData(field: APIConfiguration.shared.responceWaitingParameterName, dataType: .bool) { [weak self] result in
+            DispatchQueue.main.async {
+                if let isDead = result as? Bool {
+                    self?.shouldShowOnboarding = !isDead // Если isDead == false, выдаём 1 (true), иначе 0 (false).
+                } else {
+                    // В случае ошибки или если значение не найдено, установка значения по умолчанию
+                    self?.shouldShowOnboarding = true
                 }
             }
         }

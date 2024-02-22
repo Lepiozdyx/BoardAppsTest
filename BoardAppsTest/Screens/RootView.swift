@@ -25,7 +25,7 @@ struct RootView: View {
                     CustomOnboardingView()
                 }
             } else {
-                LoadingView(vm: vm)
+                LoadingView()
             }
         }
     }

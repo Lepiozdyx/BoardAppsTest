@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoadingView: View {
-    @ObservedObject var vm: LoadingViewModel
+//    @ObservedObject var vm: LoadingViewModel
     @State private var downloadProgress = 0.0
     
     var body: some View {
@@ -21,10 +21,10 @@ struct LoadingView: View {
                 ProgressView(value: downloadProgress, total: 100)
                     .progressViewStyle(.linear)
                     .frame(width: 190)
-                    .onAppear {
-                        print("LoadingView: Экран загрузки появился.")
-//                        vm.checkStatus()
-                    }
+//                    .onAppear {
+//                        print("LoadingView: Экран загрузки появился.")
+////                        vm.checkStatus()
+//                    }
             }
             .padding()
             .onAppear {
@@ -43,5 +43,5 @@ struct LoadingView: View {
 }
 
 #Preview {
-    LoadingView(vm: LoadingViewModel())
+    LoadingView()
 }

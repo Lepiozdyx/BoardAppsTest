@@ -36,26 +36,6 @@ final class RemoteConfigService {
         }
     }
     
-//    func checkLaunchDate(completion: @escaping (Bool) -> Void) {
-//        print("RemoteConfigService: Проверяем дату запуска.")
-//        let remoteConfig = RemoteConfig.remoteConfig()
-//        remoteConfig.fetchAndActivate { status, error in
-//            guard error == nil else { return completion(true) } // По умолчанию продолжаем без серверного запроса
-//            
-//            let formatter = DateFormatter()
-//            formatter.dateFormat = "dd.MM.yyyy"
-//            if let dateString = remoteConfig[APIConfiguration.shared.remoteConfigKey].stringValue,
-//               let lastDate = formatter.date(from: dateString),
-////               let deadlineDate = Calendar.current.date(byAdding: .day, value: 2, to: lastDate),
-//               Date() <= lastDate {
-//                // Если текущая дата меньше, чем lastDate
-//                completion(true) // Продолжаем без запроса
-//            } else {
-//                completion(false) // Производим запрос
-//            }
-//        }
-//    }
-    
     func checkLaunchDate(completion: @escaping (Bool) -> Void) {
         print("RemoteConfigService: Проверяем дату запуска.")
         let remoteConfig = RemoteConfig.remoteConfig()
