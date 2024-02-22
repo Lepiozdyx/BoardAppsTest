@@ -8,7 +8,7 @@
 import SwiftUI
 
 final class OnboardingViewModel: ObservableObject {
-    @Published var source = Onboarding.getStep()
+    @Published var source = Onboarding.standartStep
     @Published var currentStep = 0
     
     func stepHandler() -> Bool {
