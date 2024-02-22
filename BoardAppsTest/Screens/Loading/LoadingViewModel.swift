@@ -19,7 +19,7 @@ final class LoadingViewModel: ObservableObject {
     func checkStatus() {
         print("LoadingViewModel: Выполнение ПСЕВДОсетевого запроса.")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.shouldShowOnboarding = true // Или false для проверки
+            self.shouldShowOnboarding = false // Или false для проверки
         }
     }
     

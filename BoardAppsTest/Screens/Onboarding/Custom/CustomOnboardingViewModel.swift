@@ -7,6 +7,7 @@
 
 import Foundation
 import StoreKit
+import OneSignalFramework
 
 final class CustomOnboardingViewModel: ObservableObject {
     @Published var source = Onboarding.customStep
@@ -34,8 +35,17 @@ final class CustomOnboardingViewModel: ObservableObject {
         }
     }
     
+    func requestNotifications() {
+        OneSignal.Notifications.requestPermission({ accepted in
+            print("User accepted notifications: \(accepted)")
+        }, fallbackToSettings: true)
+    }
+    
     private func fetchInitialURL() {
-        RemoteConfigService.shared.getFirebaseData(field: APIConfiguration.shared.initialUrlName, dataType: .string) { [weak self] result in
+        RemoteConfigService.shared.getFirebaseData(
+            field: APIConfiguration.shared.initialUrlName,
+            dataType: .string
+        ) { [weak self] result in
             DispatchQueue.main.async {
                 if let urlString = result as? String, let url = URL(string: urlString) {
                     self?.initialURL = url

@@ -22,7 +22,6 @@ final class NetworkManager {
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.method
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        // request timeout
         request.timeoutInterval = 7
         
         do {

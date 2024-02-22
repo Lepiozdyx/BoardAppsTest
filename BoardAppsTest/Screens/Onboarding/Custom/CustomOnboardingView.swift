@@ -34,6 +34,8 @@ struct CustomOnboardingView: View {
                         .onChange(of: vm.currentStep) { newValue in
                             if newValue == 1 {
                                 vm.requestReview()
+                            } else if newValue == 2 {
+                                vm.requestNotifications()
                             }
                         }
                         
