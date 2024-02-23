@@ -24,7 +24,6 @@ struct RootView: View {
                     }
                 } else if isCustomOnboardingCompleted {
                     WebView()
-//                    WebView(url: vm.initialURL ?? URL(string: "https://google.com")!)
                 } else {
                     CustomOnboardingView(isOnboarding: $isCustomOnboardingCompleted)
                 }

@@ -9,60 +9,31 @@ import Foundation
 
 final class LoadingViewModel: ObservableObject {
     @Published var shouldShowOnboarding: Bool?
-//    @Published var initialURL: URL?
     
     init() {
-        print("LoadingViewModel: Инициализация.")
         checkLaunchDate()
     }
     
-    #warning(" ")
-    func checkStatus() {
-        print("LoadingViewModel: Выполнение ПСЕВДОсетевого запроса.")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.shouldShowOnboarding = false // Или false для проверки
+    private func checkStatus() {
+        let deviceData = DeviceInfo.collectData()
+        
+        NetworkManager.networkManager.postRequest(endpoint: deviceData) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let success):
+                    self?.shouldShowOnboarding = success
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    self?.checkIsDeadParameter()
+                }
+            }
         }
     }
     
-//    private func checkStatus() {
-//      print("LoadingViewModel: Выполнение сетевого запроса.")
-//        let deviceData = DeviceInfo.collectData()
-//        
-//        NetworkManager.networkManager.postRequest(endpoint: deviceData) { [weak self] result in
-//            DispatchQueue.main.async {
-//                switch result {
-//                case .success(let success):
-//                    self?.shouldShowOnboarding = success
-//                case .failure(let error):
-//                    print(error.localizedDescription)
-//                    self?.checkIsDeadParameter()
-//                }
-//            }
-//        }
-//    }
-    
-//    private func fetchInitialURL() {
-//        RemoteConfigService.shared.getFirebaseData(
-//            field: APIConfiguration.shared.initialUrlName,
-//            dataType: .string
-//        ) { [weak self] result in
-//            DispatchQueue.main.async {
-//                if let urlString = result as? String, let url = URL(string: urlString) {
-//                    self?.initialURL = url
-//                } else {
-//                    // Установка значения по умолчанию, если URL не найден
-//                    self?.initialURL = URL(string: "https://google.com")
-//                }
-//            }
-//        }
-//    }
-    
-    private func checkLaunchDate() {
-        print("LoadingViewModel: Проверка даты через RemoteConfigService.")
+    private func checkLaunchDate() {        
         RemoteConfigService.shared.checkLaunchDate { [weak self] noRequest in
             DispatchQueue.main.async {
                 if noRequest {
-                    // Если текущая дата меньше lastDate, не делаем запрос
                     self?.shouldShowOnboarding = true
                 } else {
                     self?.checkStatus()
@@ -75,9 +46,8 @@ final class LoadingViewModel: ObservableObject {
         RemoteConfigService.shared.getFirebaseData(field: APIConfiguration.shared.responceWaitingParameterName, dataType: .bool) { [weak self] result in
             DispatchQueue.main.async {
                 if let isDead = result as? Bool {
-                    self?.shouldShowOnboarding = !isDead // Если isDead == false, выдаём 1 (true), иначе 0 (false).
+                    self?.shouldShowOnboarding = !isDead
                 } else {
-                    // В случае ошибки или если значение не найдено, установка значения по умолчанию
                     self?.shouldShowOnboarding = true
                 }
             }

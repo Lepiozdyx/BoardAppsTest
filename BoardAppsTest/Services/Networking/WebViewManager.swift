@@ -18,7 +18,7 @@ struct WebView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        // загрузка URL обрабатывается через Coordinator
+        // Coordinator
     }
 
     func makeCoordinator() -> Coordinator {
@@ -55,7 +55,7 @@ struct WebView: UIViewRepresentable {
 
         private func loadUserSpecificURL() {
             let savedURLString = UserDefaults.standard.string(forKey: "lastVisitedPage")
-            let urlString = savedURLString ?? "https://google.com" // Значение по умолчанию, если нет сохраненного URL
+            let urlString = savedURLString ?? "https://google.com"
             if let url = URL(string: urlString) {
                 DispatchQueue.main.async {
                     self.webView.load(URLRequest(url: url))
@@ -65,7 +65,7 @@ struct WebView: UIViewRepresentable {
 
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
             loadCheckTimer?.invalidate()
-            // Сохранение URL последней успешно загруженной страницы
+            
             if let url = webView.url?.absoluteString {
                 UserDefaults.standard.set(url, forKey: "lastVisitedPage")
             }
@@ -73,28 +73,24 @@ struct WebView: UIViewRepresentable {
 
         func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
             loadCheckTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
-                print("Страница не загрузилась в течение 5 секунд.")
                 webView.stopLoading()
             }
         }
 
         func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
             loadCheckTimer?.invalidate()
-            // Обработка ошибок загрузки
         }
 
         func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
             loadCheckTimer?.invalidate()
-            // Обработка ошибок загрузки
         }
     }
 }
 
 extension WebView {
-    // Создание WKWebView с настраиваемым WKWebsiteDataStore
     static func createWebView() -> WKWebView {
         let webViewConfig = WKWebViewConfiguration()
-        webViewConfig.websiteDataStore = .default() // для сохранения куки и данных сессии
+        webViewConfig.websiteDataStore = .default()
         return WKWebView(frame: .zero, configuration: webViewConfig)
     }
 }
